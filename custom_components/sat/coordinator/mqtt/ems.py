@@ -110,6 +110,9 @@ class SatEmsMqttCoordinator(SatMqttCoordinator):
 
     @property
     def hot_water_setpoint(self) -> Optional[float]:
+        dhw_data = self.data.get("dhw")
+        if isinstance(dhw_data, dict):
+            return float_value(dhw_data.get("seltemp") or dhw_data.get("settemp"))
         return float_value(self.data.get(DATA_DHW_SETPOINT))
 
     @property
