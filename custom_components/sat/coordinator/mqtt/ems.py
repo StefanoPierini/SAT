@@ -31,7 +31,7 @@ DATA_BOILER_CAPACITY = "nompower"
 DATA_REL_MIN_MOD_LEVEL = "burnminpower"
 DATA_MAX_REL_MOD_LEVEL_SETTING = "burnmaxpower"
 
-SETPOINT_HEARTBEAT_INTERVAL = 300  # 5 minutes safety keepalive interval
+SETPOINT_HEARTBEAT_INTERVAL = 60  # 60s keepalive to prevent EMS-ESP fallback timeout (~240s) to 0
 
 _LOGGER: logging.Logger = logging.getLogger(__name__)
 
